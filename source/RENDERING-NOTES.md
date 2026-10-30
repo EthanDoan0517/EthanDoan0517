@@ -64,3 +64,17 @@ References:
 - MDN, animateTransform: https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animateTransform
 GitHub compatibility is checked empirically on the live profile, not inferred
 from the local preview alone.
+
+
+Live verification: GitHub loaded all three desktop SVGs as images. Sampled live
+SVG response bodies match the source exactly and use image/svg+xml. The tested
+raw asset requests completed in 0.21–0.32 seconds on this connection; this is not
+a whole-page benchmark. Desktop hero112091 bytes versus6369621 bytes previously
+(98.2% smaller); mobile100149 versus7108308 bytes (98.6% smaller).
+
+Browser geometry was sampled over12.33 seconds. Linear interpolation between
+sampled positions gives peak intervals3.2000000,3.2000000,3.2000001 seconds and
+median translation100px/s. Raw requestAnimationFrame callbacks were irregular;
+these values verify motion timing, not achieved display frame rate. Canvas
+sampling of an SVG image returned a static image and was rejected as a timing
+measurement. SVG image motion was separately inspected on the actual profile.

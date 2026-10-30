@@ -1,0 +1,36 @@
+EDIT AND REBUILD
+1. Edit tools/build_panel.py for shared layout, text, icons and ECG geometry.
+2. Edit tools/build_vector.py for vector rendering, gradients and SVG motion.
+3. python tools/build_vector.py
+4. Keep README accessible text and source/ECG-NOTES.md in agreement.
+5. python tools/check_vector.py
+6. python tools/build_preview.py (local GitHub-markdown preview)
+7. Inspect desktop/mobile and reduced-motion images, then package.
+
+Dependencies: tools/requirements.txt; Windows Consolas or PROFILE_FONT_DIR.
+The published source exports outlined glyphs, so viewers need no installed font.
+Build_panel raster export, build_hero, finish_cards and PNG/GIF checks are legacy
+and must not be used to overwrite the current vector delivery.
+
+CALIBRATION AND PRESENTATION
+Small squares16px; beat320px; 400px per represented ECG second.
+SVG motion320px per3.2seconds; quarter-speed synthetic75bpm illustration.
+No real-time heart-rate claim. Grid and waveform share phase and speed.
+Divider/grid center y146 desktop and y392 mobile. Blue light stays stationary.
+Desktop fade x548+.04y to628+.04y. Minimum information-text clearance35.68px.
+Mint gradient cancels the trace translation so its highlight stays at entry.
+Star follows the same waveform with explicit QRS breakpoints.
+
+COMPOSITION
+Hero1200x338 desktop /720x1040 mobile; card display width374px, responsive.
+Information values16px desktop /32px mobile; labels unchanged18px /34px.
+All14 linked SVGs include separate still and mobile variants.
+No scripts, external resources, raster layers or external fonts in SVG delivery.
+Alt text, native accessible prose and project-card links remain in README.
+
+PUBLISHED
+Repository:EthanDoan0517/EthanDoan0517, main,2026-10-30.
+Current publication SHA is in preview/publication-commit.txt.
+Manifest:preview/publication-manifest.json. Diagnosis:source/RENDERING-NOTES.md.
+Backup:archive/before-sharp-refinement. Evidence:preview/sharp-*.
+Preview:http://127.0.0.1:8765/preview/index.html while server runs.
