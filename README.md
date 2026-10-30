@@ -1,18 +1,18 @@
 <p>
-<picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/hero-mobile-still.png"><source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-desktop-still.png?v=compact-1"><source media="(max-width: 600px)" srcset="assets/hero-mobile.gif"><img src="assets/hero-desktop.gif?v=compact-1" width="1200" alt="Ethan Doan. Pre-med @ William &amp; Mary · Chemistry. Interests: Medicine · Molecular &amp; cell biology · Volunteering &amp; service · AI/ML. Research: Undergraduate bioinformatics. Tools: RStudio · R · Python · Git Bash · Jupyter · Excel. A green EKG moves right to left through four controlled variations. Full accessible text and still alternatives follow."></picture>
+<picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/hero-mobile-still.png"><source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-desktop-still.png?v=type-1"><source media="(max-width: 600px)" srcset="assets/hero-mobile.gif"><img src="assets/hero-desktop.gif?v=type-1" width="1200" alt="Ethan Doan. Pre-med @ William &amp; Mary · Chemistry. Interests: Medicine · Molecular &amp; cell biology · Volunteering &amp; service · AI/ML. Research: Undergraduate bioinformatics. Tools: RStudio · R · Python · Git Bash · Jupyter · Excel. A green EKG moves right to left through four controlled variations. Full accessible text and still alternatives follow."></picture>
 </p>
 
 <p align="center">
-  <a href="https://github.com/EthanDoan0517/Skindex"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/card-skindex-mobile-still.png"><source media="(prefers-reduced-motion: reduce)" srcset="assets/card-skindex-desktop-still.png?v=compact-1"><source media="(max-width: 600px)" srcset="assets/card-skindex-mobile.png"><img src="assets/card-skindex-desktop.png?v=compact-1" width="374" alt="Skindex — An educational skin-image library with photo interpretation tools. Not for medical diagnosis. In development. Open private repository."></picture></a> &nbsp; &nbsp;
-  <a href="https://github.com/EthanDoan0517/protist-atlas"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/card-protist-mobile-still.png"><source media="(prefers-reduced-motion: reduce)" srcset="assets/card-protist-desktop-still.png?v=compact-1"><source media="(max-width: 600px)" srcset="assets/card-protist-mobile.png"><img src="assets/card-protist-desktop.png?v=compact-1" width="374" alt="Protist Atlas — An interactive atlas of protist life. Browse lineages, traits &amp; habitats. Source-linked profiles &amp; images. Planned. Open private repository."></picture></a>
+  <a href="https://github.com/EthanDoan0517/Skindex"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/card-skindex-mobile-still.png"><source media="(prefers-reduced-motion: reduce)" srcset="assets/card-skindex-desktop-still.png?v=type-1"><source media="(max-width: 600px)" srcset="assets/card-skindex-mobile.png"><img src="assets/card-skindex-desktop.png?v=type-1" width="374" alt="Skindex — An educational skin-image library with photo interpretation tools. Not for medical diagnosis. In development. Open private repository."></picture></a> &nbsp; &nbsp;
+  <a href="https://github.com/EthanDoan0517/protist-atlas"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/card-protist-mobile-still.png"><source media="(prefers-reduced-motion: reduce)" srcset="assets/card-protist-desktop-still.png?v=type-1"><source media="(max-width: 600px)" srcset="assets/card-protist-mobile.png"><img src="assets/card-protist-desktop.png?v=type-1" width="374" alt="Protist Atlas — An interactive atlas of protist life. Browse lineages, traits &amp; habitats. Source-linked profiles &amp; images. Planned. Open private repository."></picture></a>
 </p>
 
-<p align="center"><sub>Portfolio&nbsp;↗ · <a href="https://github.com/EthanDoan0517?tab=repositories">Explore&nbsp;projects&nbsp;↗</a> · <a href="https://www.linkedin.com/in/ethan-doan-ba9800296/">LinkedIn&nbsp;↗</a> · <a href="mailto:etqdoan@gmail.com">Get&nbsp;in&nbsp;touch&nbsp;↗</a></sub></p>
+<p align="center">Portfolio&nbsp;↗ · <a href="https://github.com/EthanDoan0517?tab=repositories">Explore&nbsp;projects&nbsp;↗</a> · <a href="https://www.linkedin.com/in/ethan-doan-ba9800296/">LinkedIn&nbsp;↗</a> · <a href="mailto:etqdoan@gmail.com">Get&nbsp;in&nbsp;touch&nbsp;↗</a></p>
 
 <details>
 <summary>Profile details · accessible text and still images</summary>
 
-[Desktop still](assets/profile-desktop-still.png?v=compact-1) · [Mobile still](assets/profile-mobile-still.png)
+[Desktop still](assets/profile-desktop-still.png?v=type-1) · [Mobile still](assets/profile-mobile-still.png)
 
 # Ethan Doan
 
@@ -66,7 +66,7 @@ A custom League of Legends skin adapting Clash from Rainbow Six Siege to Braum. 
 
 [Explore the project ↗](https://github.com/EthanDoan0517/clash-braum)
 
-<sub>Independent fan project; my contribution is the adaptation and integration of existing game assets.</sub>
+Independent fan project; my contribution is the adaptation and integration of existing game assets.
 
 </details>
 
