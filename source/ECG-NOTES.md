@@ -37,8 +37,8 @@ The desktop lower separator moves from y=334 to y=282; the mobile signal-band
 lower separator moves from y=554 to y=520. The mobile trace and central divider
 move up together by 8 pixels. Shorter information rows reduce hero height from
 390 to 338 pixels on desktop and from 1272 to 1040 on mobile. The blue field
-stays stationary; category-label sizes and project-card artwork are unchanged. The trace ends at x=1128 / x=648; its last 48 pixels blend into
-mint with a smoothstep gradient. A pale core, thin rays and a 15-pixel-radius
+stays stationary; category-label sizes and project-card layout are unchanged. The trace ends at x=1128 / x=648; its last 48 pixels blend into
+mint with a smoothstep gradient. A pale core, thin rays and an 11-pixel-radius
 finite halo follow the exact signal height at this fixed x, including at the loop.
 
 ## Clinical references (reviewed 2026-10-30)
@@ -50,3 +50,19 @@ finite halo follow the exact signal height at this fixed x, including at the loo
 The supplied rhythm image informed the overall P–QRS–T appearance; the supplied
 blue glow image informed only the original green lighting treatment. Neither
 image was copied into the artwork. The documented calibration governs geometry.
+
+
+## Vector delivery refinement (2026-10-30)
+
+The README now uses self-contained SVG images with glyph outlines, vector icons,
+rounded card surfaces, continuous gradients and declarative SVG animation. No
+scripts, external fonts, raster plates or palette conversion are required.
+Animation retains the same 320px translation every 3.2 seconds (quarter speed).
+Reduced-motion sources and expanded still links use nonanimated SVGs.
+
+Only the desktop waveform's left fade was moved: its smooth transition is now
+x=548+0.04y through x=628+0.04y, replacing x=610+0.04y through x=702+0.04y.
+The grid and blue light retain their previous fade. The minimum conservative
+horizontal clearance to information text is 35.68 artwork pixels; the fade mask
+also covers the waveform's blur. Mobile keeps its reserved signal band.
+See RENDERING-NOTES.md for the export diagnosis and verification limits.
