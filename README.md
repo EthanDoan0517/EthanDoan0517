@@ -1,5 +1,5 @@
 <p>
-<picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/hero-mobile-still.png?v=glow-1"><source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-desktop-still.png?v=glow-1"><source media="(max-width: 600px)" srcset="assets/hero-mobile.png?v=glow-1"><img src="assets/hero-desktop.png?v=glow-1" width="1200" alt="Ethan Doan. Pre-med @ William &amp; Mary · Chemistry. Interests: Medicine · Molecular &amp; cell biology · Volunteering &amp; service · AI/ML. Research: Undergraduate bioinformatics. Tools: RStudio · R · Python · Git Bash · Jupyter · Excel. A green EKG moves right to left through four controlled variations, with a moving square grid and soft blue illumination. Full accessible text and still alternatives follow."></picture>
+<picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/hero-mobile-still.png?v=sinus-1"><source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-desktop-still.png?v=sinus-1"><source media="(max-width: 600px)" srcset="assets/hero-mobile.png?v=sinus-1"><img src="assets/hero-desktop.png?v=sinus-1" width="1200" alt="Ethan Doan. Pre-med @ William &amp; Mary · Chemistry. Interests: Medicine · Molecular &amp; cell biology · Volunteering &amp; service · AI/ML. Research: Undergraduate bioinformatics. Tools: RStudio · R · Python · Git Bash · Jupyter · Excel. A synthetic lead-II-style normal sinus rhythm at 75 bpm moves right to left over a calibrated square grid, with stationary blue illumination and a mint-green entry star. This is an illustration, not a patient recording. Full accessible text and still alternatives follow."></picture>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 <details>
 <summary>Profile details · accessible text and still images</summary>
 
-[Desktop still](assets/profile-desktop-still.png?v=glow-1) · [Mobile still](assets/profile-mobile-still.png)
+[Desktop still](assets/profile-desktop-still.png?v=sinus-1) · [Mobile still](assets/profile-mobile-still.png?v=sinus-1)
 
 # Ethan Doan
 
