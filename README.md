@@ -1,5 +1,5 @@
 <p>
-<picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/hero-mobile-still.svg?v=sharp-1"><source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-desktop-still.svg?v=sharp-1"><source media="(max-width: 600px)" srcset="assets/hero-mobile.svg?v=sharp-1"><img src="assets/hero-desktop.svg?v=sharp-1" width="1200" alt="Ethan Doan. Pre-med @ William &amp; Mary · Chemistry. Interests: Medicine · Molecular &amp; cell biology. Research: Transcriptomics · RNA-seq. Tools: R · Python · Git. A synthetic lead-II-style ECG moves gently right to left over a calibrated square grid, with stationary blue illumination and a mint-green entry star. The represented 75 bpm rhythm is shown at quarter speed for comfortable viewing, not as a real-time heart rate or patient recording. Full accessible text and still alternatives follow."></picture>
+<picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/hero-mobile-still.svg?v=lighting-1"><source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-desktop-still.svg?v=lighting-1"><source media="(max-width: 600px)" srcset="assets/hero-mobile.svg?v=lighting-1"><img src="assets/hero-desktop.svg?v=lighting-1" width="1200" alt="Ethan Doan. Pre-med @ William &amp; Mary · Chemistry. Interests: Medicine · Molecular &amp; cell biology. Research: Transcriptomics · RNA-seq. Tools: R · Python · Git. A synthetic lead-II-style ECG moves gently right to left over a calibrated square grid, with stationary blue illumination and a mint-green entry star. The represented 75 bpm rhythm is shown at quarter speed for comfortable viewing, not as a real-time heart rate or patient recording. Full accessible text and still alternatives follow."></picture>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 <details>
 <summary>Profile details · accessible text and still images</summary>
 
-[Desktop still](assets/profile-desktop-still.svg?v=sharp-1) · [Mobile still](assets/profile-mobile-still.svg?v=sharp-1)
+[Desktop still](assets/profile-desktop-still.svg?v=lighting-1) · [Mobile still](assets/profile-mobile-still.svg?v=lighting-1)
 
 # Ethan Doan
 

@@ -3,7 +3,7 @@ EDIT AND REBUILD
 2. Edit tools/build_vector.py for vector rendering, gradients and SVG motion.
 3. python tools/build_vector.py
 4. Keep README accessible text and source/ECG-NOTES.md in agreement.
-5. python tools/check_vector.py
+5. python tools/check_vector.py and python tools/check_lighting.py
 6. python tools/build_preview.py (local GitHub-markdown preview)
 7. Inspect desktop/mobile and reduced-motion images, then package.
 
@@ -34,3 +34,9 @@ Current publication SHA is in preview/publication-commit.txt.
 Manifest:preview/publication-manifest.json. Diagnosis:source/RENDERING-NOTES.md.
 Backup:archive/before-sharp-refinement. Evidence:preview/sharp-*.
 Preview:http://127.0.0.1:8765/preview/index.html while server runs.
+
+LIGHTING
+See source/LIGHTING-NOTES.md. Desktop center859,158; mobile360,390.
+Ambient field is opaque; do not restore masked low-alpha background layers.
+R response:160ms rise /640ms decay,10% light lift; grid uses same phase.
+Star halo3s; fixed core; status dots4s; signal3.2s. Combined period48s.

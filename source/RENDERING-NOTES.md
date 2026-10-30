@@ -78,3 +78,12 @@ median translation100px/s. Raw requestAnimationFrame callbacks were irregular;
 these values verify motion timing, not achieved display frame rate. Canvas
 sampling of an SVG image returned a static image and was rejected as a timing
 measurement. SVG image motion was separately inspected on the actual profile.
+
+
+## Subsequent lighting correction
+
+The masked low-alpha SVG glow itself produced a narrow dark band. This was a
+compositing issue in the vector implementation, separate from the earlier raster
+softness. The ambient field is now opaque and the signal's final blend is outside
+its masks. See LIGHTING-NOTES.md for reproduced pixel evidence, repositioning,
+independent star pulse and synchronized R-wave response.

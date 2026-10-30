@@ -26,10 +26,11 @@ for name in assets:
     anims=el.findall('.//s:animateTransform',ns)+el.findall('.//s:animate',ns)
     assert bool(anims)==animated
     if 'hero-' in name and animated:
-        assert len(anims)==6
-        assert all(a.attrib['dur']=='3.2s' for a in anims)
+        transforms=el.findall('.//s:animateTransform',ns)
+        assert len(transforms)==6
+        assert all(a.attrib['dur']=='3.2s' for a in transforms)
         assert sum(a.attrib.get('to')=='-320 0' for a in anims)==4
-        star=next(a for a in anims if 'keyTimes' in a.attrib)
+        star=next(a for a in transforms if 'keyTimes' in a.attrib)
         times=np.array([float(x) for x in star.attrib['keyTimes'].split(';')])
         vals=np.array([[float(x) for x in p.split()] for p in star.attrib['values'].split(';')])
         assert np.all(np.diff(times)>0) and times[0]==0 and times[-1]==1
@@ -58,7 +59,7 @@ for mobile in (False,True):
 
 report=dict(assets=records,geometry=geometry,links_unchanged=True,accessible_content_unchanged=True)
 (root/'preview/sharp-vector-checks.json').write_text(json.dumps(report,indent=2))
-publish=[dict(path='README.md')]+[dict(path=x['path']) for x in records]+[dict(path='source/ECG-NOTES.md'),dict(path='source/RENDERING-NOTES.md'),dict(path='tools/build_vector.py'),dict(path='tools/build_panel.py'),dict(path='tools/check_vector.py'),dict(path='tools/requirements.txt'),dict(path='MAINTENANCE.txt')]
+publish=[dict(path='README.md')]+[dict(path=x['path']) for x in records]+[dict(path='source/ECG-NOTES.md'),dict(path='source/RENDERING-NOTES.md'),dict(path='tools/build_vector.py'),dict(path='tools/build_panel.py'),dict(path='tools/check_vector.py'),dict(path='tools/requirements.txt'),dict(path='MAINTENANCE.txt'),dict(path='source/LIGHTING-NOTES.md'),dict(path='tools/check_lighting.py')]
 for entry in publish:
     path=root/entry['path']
     if path.exists():
