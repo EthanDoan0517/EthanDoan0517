@@ -1,4 +1,21 @@
-# EKG lighting refinement — 2026-10-30
+# EKG lighting — 2026-10-30
+
+## Current: steady ambient glow
+
+The R-triggered ambient and grid-illumination pulses have been removed. The
+corrected opaque gradient stays at its resting RGB(19,29,44) center color at all
+times, including spikes and loop boundaries. Its shape and desktop/mobile centers
+are unchanged. Grid illumination is fixed at opacity0.93 while the grid scrolls.
+The endpoint star retains its3-second pulse and fixed pale core; project status
+dots retain their4-second animations. Waveform geometry and3.2-second translation
+are unchanged. The gradient has no animation elements. Checks compare its exact
+stop colors and geometry with the previous resting field, the star element with
+the previous export, and the complete card bytes with the previous assets.
+
+The earlier investigation below documents the band correction and the now-removed
+R-wave response. Current browser evidence uses preview/steady-* filenames.
+
+## Earlier band correction and response
 
 The supplied crop shows a real dark fade band, not just low image resolution.
 Its pixels fall from the panel's RGB(11,15,19) to (9,13,17). A browser-rendered

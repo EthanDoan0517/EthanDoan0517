@@ -87,3 +87,7 @@ compositing issue in the vector implementation, separate from the earlier raster
 softness. The ambient field is now opaque and the signal's final blend is outside
 its masks. See LIGHTING-NOTES.md for reproduced pixel evidence, repositioning,
 independent star pulse and synchronized R-wave response.
+
+
+The subsequent steady-glow revision removes the R-triggered ambient and grid
+illumination pulses. The corrected opaque field and independent star pulse remain.

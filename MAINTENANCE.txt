@@ -38,5 +38,6 @@ Preview:http://127.0.0.1:8765/preview/index.html while server runs.
 LIGHTING
 See source/LIGHTING-NOTES.md. Desktop center859,158; mobile360,390.
 Ambient field is opaque; do not restore masked low-alpha background layers.
-R response:160ms rise /640ms decay,10% light lift; grid uses same phase.
+Ambient brightness stays constant; grid illumination stays at opacity0.93.
+There is no R-triggered background response.
 Star halo3s; fixed core; status dots4s; signal3.2s. Combined period48s.

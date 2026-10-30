@@ -19,25 +19,13 @@ def lighting(cfg):
     """Center the desktop field in the actual free space beside the text.
 
     Mobile has a separate full-width signal band, so use that band's midpoint.
-    R maxima are at 100.8 + 320k - 100t; solve their crossing of this center.
     """
     rows=[r for r in cfg['text'] if r[1]<cfg['cards'][0][1]]
     text_right=max(x+b.font(size,kind).getlength(words)-b.ink_offset(words,size,kind)
                    for x,y,words,size,kind,color in rows)
     cx=360 if cfg['mobile'] else round((text_right+cfg['width']-1)/2,3)
     cy,rx,ry=(390,235,145) if cfg['mobile'] else (158,245,185)
-    peak=((.252*b.PX_PER_SECOND-cx)%b.BEAT)/b.PLAYBACK_PX_PER_SECOND
-    return dict(cx=cx,cy=cy,rx=rx,ry=ry,text_right=text_right,
-                peak=peak,rise=.16,decay=.64,boost=.10)
-
-
-def response(t, light):
-    dt=(t-light['peak']+light['rise'])%3.2-light['rise']
-    if -light['rise']<=dt<=0:
-        u=(dt+light['rise'])/light['rise']; return u*u*(3-2*u)
-    if 0<dt<light['decay']:
-        u=dt/light['decay']; return 1-u*u*(3-2*u)
-    return 0.
+    return dict(cx=cx,cy=cy,rx=rx,ry=ry,text_right=text_right)
 
 
 class Drawing:
@@ -79,31 +67,20 @@ class Drawing:
         stops=''.join(f'<stop offset="{i/16}" stop-color="white" stop-opacity="{fmt(1-(i/16)**2*(3-2*i/16) if inverse else (i/16)**2*(3-2*i/16))}"/>' for i in range(17))
         self.defs.append(f'<linearGradient id="{ident}" gradientUnits="userSpaceOnUse" x1="{x1}" x2="{x2}" y1="0" y2="0"'+(' gradientTransform="matrix(1 0 .04 1 0 0)"' if diagonal else '')+f'>{stops}</linearGradient>')
 
-    def light_animation(self, attribute, quiet, peak):
-        if not self.animated: return ''
-        light=lighting(self.cfg)
-        times=[0,(light['peak']-light['rise'])/3.2,light['peak']/3.2,
-               (light['peak']+light['decay'])/3.2,1]
-        assert 0<times[1]<times[2]<times[3]<1
-        return (f'<animate attributeName="{attribute}" values="{quiet};{quiet};{peak};{quiet};{quiet}" '
-                f'keyTimes="{";".join(fmt(t) for t in times)}" dur="3.2s" '
-                'calcMode="spline" keySplines="0 0 1 1;.333333 0 .666667 1;.333333 0 .666667 1;0 0 1 1" repeatCount="indefinite"/>')
-
     def ambient(self):
         """One opaque color field; no translucent mask or isolated screen blend.
 
         Premultiplied low-alpha rounding in the previous masked screen layer
         produced below-background pixels. Direct opaque colors cannot darken
-        the background. Pulse colors are bounded and share one radial field.
+        the background. Color and position stay constant throughout the animation.
         """
-        c=self.cfg; light=lighting(c); strength=response(self.phase,light)
-        def color(f,boost):
-            return 'rgb('+','.join(fmt(bg+f*delta*(1+boost)) for bg,delta in zip(b.BG,(8,14,25)))+')'
+        c=self.cfg; light=lighting(c)
+        def color(f):
+            return 'rgb('+','.join(fmt(bg+f*delta) for bg,delta in zip(b.BG,(8,14,25)))+')'
         stops=[]
         for i in range(33):
             f=math.exp(-2*(i/32*2.5)**2) if i<32 else 0
-            quiet=color(f,0); peak=color(f,light['boost'])
-            stops.append(f'<stop offset="{i/32}" stop-color="{color(f,strength*light["boost"])}">{self.light_animation("stop-color",quiet,peak)}</stop>')
+            stops.append(f'<stop offset="{i/32}" stop-color="{color(f)}"/>')
         self.defs.append(f'<radialGradient id="ambient-color" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" color-interpolation="sRGB" gradientTransform="translate({light["cx"]} {light["cy"]}) scale({light["rx"]*2.5} {light["ry"]*2.5})">{"".join(stops)}</radialGradient>')
         return f'<rect id="ambient-field" width="{c["width"]}" height="{c["height"]}" fill="url(#ambient-color)"/>'
 
@@ -160,10 +137,9 @@ class Drawing:
             return f'<animate attributeName="opacity" values="{low};1;{low}" dur="3s" calcMode="spline" keyTimes="0;.5;1" keySplines=".42 0 .58 1;.42 0 .58 1" repeatCount="indefinite"/>'
         pulse=(1-math.cos(2*math.pi*self.phase/3))/2
         star=f'<g id="entry-star" transform="translate({ex} {fmt(base+b.wave(ex+shift))})">{motion}<circle id="entry-halo" r="11" fill="url(#star-halo)" opacity="{fmt(.68+.32*pulse)}">{star_pulse(.68)}</circle><g opacity="{fmt(.80+.20*pulse)}">{star_pulse(.80)}<ellipse rx="7" ry=".8" fill="url(#ray)"/><ellipse rx=".8" ry="8" fill="url(#ray)"/></g><circle id="entry-core" r="1.05" fill="#d4ffe4"/></g>'
-        grid_opacity=.93+.07*response(self.phase,light_cfg)
         # Blend the finished signal group against the opaque field, outside its
         # masks. This also prevents faint premultiplied-mask darkening on edges.
-        return f'{field}<g mask="url(#vl)" style="mix-blend-mode:screen"><g mask="url(#wr)"><g mask="url(#fl)"><g mask="url(#gl)"><g id="grid-response" opacity="{fmt(grid_opacity)}">{self.light_animation("opacity",".93","1")}<g transform="translate({fmt(-shift)} 0)" fill="none">{self.shift()}{"".join(grid)}</g></g></g></g><g mask="url(#wl)">{layers}{star}</g></g></g>'
+        return f'{field}<g mask="url(#vl)" style="mix-blend-mode:screen"><g mask="url(#wr)"><g mask="url(#fl)"><g mask="url(#gl)"><g id="grid-response" opacity=".93"><g transform="translate({fmt(-shift)} 0)" fill="none">{self.shift()}{"".join(grid)}</g></g></g></g><g mask="url(#wl)">{layers}{star}</g></g></g>'
 
     def icon(self,x,y,kind):
         result=[]; scale=1 if self.cfg['mobile'] else .75
@@ -219,9 +195,9 @@ def build():
             for name,kind,index in outputs:
                 path=b.OUT/(name+'.svg');path.write_text(Drawing(cfg,animated).render(kind,index),encoding='utf-8')
                 print(name,path.stat().st_size)
-        peak=lighting(cfg)['peak']
+        peak=((.252*b.PX_PER_SECOND-lighting(cfg)['cx'])%b.BEAT)/b.PLAYBACK_PX_PER_SECOND
         for phase in (0,peak-.16,peak,peak+.32,peak+.64,1.5,3.199,3.2,3.201,47.999,48):
-            (b.QA/f'lighting-{variant}-{fmt(phase)}.svg').write_text(Drawing(cfg,False,phase).render(),encoding='utf-8')
+            (b.QA/f'steady-{variant}-{fmt(phase)}.svg').write_text(Drawing(cfg,False,phase).render(),encoding='utf-8')
 
 
 if __name__=='__main__': build()
