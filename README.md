@@ -1,5 +1,5 @@
 <p>
-<picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/hero-mobile-still.png?v=sinus-1"><source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-desktop-still.png?v=sinus-1"><source media="(max-width: 600px)" srcset="assets/hero-mobile.png?v=sinus-1"><img src="assets/hero-desktop.png?v=sinus-1" width="1200" alt="Ethan Doan. Pre-med @ William &amp; Mary · Chemistry. Interests: Medicine · Molecular &amp; cell biology · Volunteering &amp; service · AI/ML. Research: Undergraduate bioinformatics. Tools: RStudio · R · Python · Git Bash · Jupyter · Excel. A synthetic lead-II-style normal sinus rhythm at 75 bpm moves right to left over a calibrated square grid, with stationary blue illumination and a mint-green entry star. This is an illustration, not a patient recording. Full accessible text and still alternatives follow."></picture>
+<picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/hero-mobile-still.png?v=calm-1"><source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-desktop-still.png?v=calm-1"><source media="(max-width: 600px)" srcset="assets/hero-mobile.png?v=calm-1"><img src="assets/hero-desktop.png?v=calm-1" width="1200" alt="Ethan Doan. Pre-med @ William &amp; Mary · Chemistry. Interests: Medicine · Molecular &amp; cell biology. Research: Transcriptomics · RNA-seq. Tools: R · Python · Git. A synthetic lead-II-style ECG moves gently right to left over a calibrated square grid, with stationary blue illumination and a mint-green entry star. The represented 75 bpm rhythm is shown at quarter speed for comfortable viewing, not as a real-time heart rate or patient recording. Full accessible text and still alternatives follow."></picture>
 </p>
 
 <p align="center">
@@ -12,19 +12,19 @@
 <details>
 <summary>Profile details · accessible text and still images</summary>
 
-[Desktop still](assets/profile-desktop-still.png?v=sinus-1) · [Mobile still](assets/profile-mobile-still.png?v=sinus-1)
+[Desktop still](assets/profile-desktop-still.png?v=calm-1) · [Mobile still](assets/profile-mobile-still.png?v=calm-1)
 
 # Ethan Doan
 
 **Pre-med @ William & Mary · Chemistry**
 
-I study Chemistry at William & Mary on the pre-med track and carry out undergraduate bioinformatics research.
+I study Chemistry at William & Mary on the pre-med track and carry out undergraduate research in transcriptomics and RNA-seq.
 
-**Interests:** Medicine · Molecular & cell biology · Volunteering & service · AI/ML
+**Interests:** Medicine · Molecular & cell biology
 
-**Research:** Undergraduate bioinformatics
+**Research:** Transcriptomics · RNA-seq
 
-**Tools:** RStudio · R · Python · Git Bash · Jupyter · Excel
+**Tools:** R · Python · Git
 
 ## Projects
 

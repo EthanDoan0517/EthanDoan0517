@@ -2,15 +2,19 @@
 
 This is an original, representative lead-II-style normal sinus rhythm illustration,
 not a patient recording or diagnostic tracing. Identical upright P waves precede
-each narrow QRS, with a fixed PR interval and regular 75 bpm rate.
+each narrow QRS, with a fixed PR interval and represented regular 75 bpm rate.
+Playback is deliberately slowed to one-quarter speed for comfortable profile
+viewing; it does not demonstrate a real-time heart rate.
 
 Calibration is expressed in logical ECG-paper units, uniformly magnified for the
 screen: one 16 × 16 source-pixel square represents 1 mm, 0.04 s horizontally and
 0.1 mV vertically. Five small squares form a large square (0.2 s / 0.5 mV).
 Screen resizing preserves square cells; physical screen millimeters depend on the
 display and zoom. R–R = 320 source pixels = 20 small squares = four large squares
-= 0.8 s. Both trace and grid translate 8 pixels every 20 ms (400 px/s), equivalent
-to 25 mm/s. The full-color APNG has 40 frames and loops every 800 ms.
+= 0.8 s of represented ECG time. Both trace and grid translate 2 pixels every
+20 ms (100 source pixels per playback second). The full-color APNG has 160
+frames and loops every 3.2 seconds. The geometry still uses the 25 mm/s paper
+standard; on-screen motion is slowed fourfold without stretching the waveform.
 
 | Component | Chosen value | Rationale |
 | --- | --- | --- |
@@ -28,10 +32,12 @@ These amplitudes are illustrative choices within a plausible lead-II morphology,
 not universal normal values; QRS voltage varies with the person and lead. There
 are no decorative beat-to-beat changes, ectopic beats, baseline drift or U waves.
 
-The grid center and green divider share y=146 on desktop and y=400 on mobile.
-The mobile divider was repositioned within the existing signal band to preserve
-all text positions and reserve space for the calibrated signal. The blue field
-stays stationary. The trace ends at x=1128 / x=648; its last 48 pixels blend into
+The grid center and green divider share y=146 on desktop and y=392 on mobile.
+The desktop lower separator moves from y=334 to y=282; the mobile signal-band
+lower separator moves from y=554 to y=520. The mobile trace and central divider
+move up together by 8 pixels. Shorter information rows reduce hero height from
+390 to 338 pixels on desktop and from 1272 to 1040 on mobile. The blue field
+stays stationary; category-label sizes and project-card artwork are unchanged. The trace ends at x=1128 / x=648; its last 48 pixels blend into
 mint with a smoothstep gradient. A pale core, thin rays and a 15-pixel-radius
 finite halo follow the exact signal height at this fixed x, including at the loop.
 
